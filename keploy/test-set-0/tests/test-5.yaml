@@ -1,0 +1,64 @@
+version: api.keploy-enterprise.io/v1beta1
+kind: Http
+name: test-5
+spec:
+    metadata: {}
+    req:
+        method: PUT
+        proto_major: 1
+        proto_minor: 1
+        url: http://localhost:5000/item/65c2175e6c176a4e5f020ef7
+        header:
+            Accept: '*/*'
+            Accept-Encoding: gzip, deflate, br
+            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjVjMjE3NDE2YzE3NmE0ZTVmMDIwZWY2IiwiZXhwIjoxNzA3MjE5MDY0fQ.mh48eUaMm3YxxRGMxZoi-mDEk0BltH-NfsFeux2kOb0
+            Cache-Control: no-cache
+            Connection: keep-alive
+            Content-Length: "72"
+            Content-Type: application/json
+            Host: localhost:5000
+            Postman-Token: d58ed805-b439-424c-a02a-a7afac9ba3c7
+            User-Agent: PostmanRuntime/7.32.1
+        body: |-
+            {
+                "name": "Updated Name",
+                "description": "Updated Description"
+            }
+        body_type: ""
+        timestamp: 2024-02-06T11:27:08.200045496Z
+        host: ""
+    resp:
+        status_code: 200
+        header:
+            Content-Length: "27"
+            Content-Type: application/json
+            Date: Tue, 06 Feb 2024 11:27:08 GMT
+            Server: Werkzeug/3.0.1 Python/3.9.18
+        body: |
+            {"message":"Item updated"}
+        body_type: ""
+        status_message: ""
+        proto_major: 0
+        proto_minor: 0
+        timestamp: 2024-02-06T11:27:10.239198146Z
+    objects: []
+    assertions:
+        noise:
+            header.Date: []
+    created: 1707218830
+curl: |-
+    curl --request PUT \
+      --url http://localhost:5000/item/65c2175e6c176a4e5f020ef7 \
+      --header 'Cache-Control: no-cache' \
+      --header 'User-Agent: PostmanRuntime/7.32.1' \
+      --header 'Accept-Encoding: gzip, deflate, br' \
+      --header 'Postman-Token: d58ed805-b439-424c-a02a-a7afac9ba3c7' \
+      --header 'Accept: */*' \
+      --header 'Content-Type: application/json' \
+      --header 'Host: localhost:5000' \
+      --header 'Connection: keep-alive' \
+      --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjVjMjE3NDE2YzE3NmE0ZTVmMDIwZWY2IiwiZXhwIjoxNzA3MjE5MDY0fQ.mh48eUaMm3YxxRGMxZoi-mDEk0BltH-NfsFeux2kOb0' \
+      --data '{
+        "name": "Updated Name",
+        "description": "Updated Description"
+    }'

@@ -1,0 +1,53 @@
+version: api.keploy-enterprise.io/v1beta1
+kind: Http
+name: test-6
+spec:
+    metadata: {}
+    req:
+        method: GET
+        proto_major: 1
+        proto_minor: 1
+        url: http://localhost:5000/item/65c21fa181b54073cf96de8e
+        header:
+            Accept: '*/*'
+            Accept-Encoding: gzip, deflate, br
+            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjVjMjFmOGM4MWI1NDA3M2NmOTZkZThkIiwiZXhwIjoxNzA3MjIxMTg3fQ.DAAapHbgwZneqml0slTFrChcFpJtG1AK5uX5Ylp6SF8
+            Cache-Control: no-cache
+            Connection: keep-alive
+            Host: localhost:5000
+            Postman-Token: a7fe857b-e259-4ef5-b2e1-15310fdf52a0
+            User-Agent: PostmanRuntime/7.32.1
+        body: ""
+        body_type: ""
+        timestamp: 2024-02-06T12:02:23.112641485Z
+        host: ""
+    resp:
+        status_code: 404
+        header:
+            Content-Length: "29"
+            Content-Type: application/json
+            Date: Tue, 06 Feb 2024 12:02:23 GMT
+            Server: Werkzeug/3.0.1 Python/3.9.18
+        body: |
+            {"message":"Item not found"}
+        body_type: ""
+        status_message: ""
+        proto_major: 0
+        proto_minor: 0
+        timestamp: 2024-02-06T12:02:25.120529791Z
+    objects: []
+    assertions:
+        noise:
+            header.Date: []
+    created: 1707220945
+curl: |
+    curl --request GET \
+      --url http://localhost:5000/item/65c21fa181b54073cf96de8e \
+      --header 'Cache-Control: no-cache' \
+      --header 'Postman-Token: a7fe857b-e259-4ef5-b2e1-15310fdf52a0' \
+      --header 'Host: localhost:5000' \
+      --header 'Accept-Encoding: gzip, deflate, br' \
+      --header 'Connection: keep-alive' \
+      --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjVjMjFmOGM4MWI1NDA3M2NmOTZkZThkIiwiZXhwIjoxNzA3MjIxMTg3fQ.DAAapHbgwZneqml0slTFrChcFpJtG1AK5uX5Ylp6SF8' \
+      --header 'User-Agent: PostmanRuntime/7.32.1' \
+      --header 'Accept: */*' \

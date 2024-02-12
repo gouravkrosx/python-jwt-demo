@@ -1,0 +1,64 @@
+version: api.keploy-enterprise.io/v1beta1
+kind: Http
+name: test-3
+spec:
+    metadata: {}
+    req:
+        method: POST
+        proto_major: 1
+        proto_minor: 1
+        url: http://localhost:5000/item
+        header:
+            Accept: '*/*'
+            Accept-Encoding: gzip, deflate, br
+            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjVjMjE3NDE2YzE3NmE0ZTVmMDIwZWY2IiwiZXhwIjoxNzA3MjE5MDY0fQ.mh48eUaMm3YxxRGMxZoi-mDEk0BltH-NfsFeux2kOb0
+            Cache-Control: no-cache
+            Connection: keep-alive
+            Content-Length: "61"
+            Content-Type: application/json
+            Host: localhost:5000
+            Postman-Token: 2d0dbbe5-26ba-464f-93e3-59dca3965d7a
+            User-Agent: PostmanRuntime/7.32.1
+        body: |-
+            {
+                "name": "Item Name",
+                "description": "Description"
+            }
+        body_type: ""
+        timestamp: 2024-02-06T11:26:22.626432552Z
+        host: ""
+    resp:
+        status_code: 201
+        header:
+            Content-Length: "57"
+            Content-Type: application/json
+            Date: Tue, 06 Feb 2024 11:26:22 GMT
+            Server: Werkzeug/3.0.1 Python/3.9.18
+        body: |
+            {"id":"65c2175e6c176a4e5f020ef7","message":"Item added"}
+        body_type: ""
+        status_message: ""
+        proto_major: 0
+        proto_minor: 0
+        timestamp: 2024-02-06T11:26:24.637027855Z
+    objects: []
+    assertions:
+        noise:
+            header.Date: []
+    created: 1707218784
+curl: |-
+    curl --request POST \
+      --url http://localhost:5000/item \
+      --header 'Content-Type: application/json' \
+      --header 'Accept: */*' \
+      --header 'Connection: keep-alive' \
+      --header 'Accept-Encoding: gzip, deflate, br' \
+      --header 'Postman-Token: 2d0dbbe5-26ba-464f-93e3-59dca3965d7a' \
+      --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjVjMjE3NDE2YzE3NmE0ZTVmMDIwZWY2IiwiZXhwIjoxNzA3MjE5MDY0fQ.mh48eUaMm3YxxRGMxZoi-mDEk0BltH-NfsFeux2kOb0' \
+      --header 'Host: localhost:5000' \
+      --header 'User-Agent: PostmanRuntime/7.32.1' \
+      --header 'Cache-Control: no-cache' \
+      --data '{
+        "name": "Item Name",
+        "description": "Description"
+    }'

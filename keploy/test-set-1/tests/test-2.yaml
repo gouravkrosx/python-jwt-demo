@@ -1,0 +1,62 @@
+version: api.keploy-enterprise.io/v1beta1
+kind: Http
+name: test-2
+spec:
+    metadata: {}
+    req:
+        method: POST
+        proto_major: 1
+        proto_minor: 1
+        url: http://localhost:5000/login
+        header:
+            Accept: '*/*'
+            Accept-Encoding: gzip, deflate, br
+            Cache-Control: no-cache
+            Connection: keep-alive
+            Content-Length: "53"
+            Content-Type: application/json
+            Host: localhost:5000
+            Postman-Token: e4a125cb-0128-4cd5-9de1-687336db7245
+            User-Agent: PostmanRuntime/7.32.1
+        body: |-
+            {
+                "username": "Shubham",
+                "password": "jain"
+            }
+        body_type: ""
+        timestamp: 2024-02-06T12:01:27.281848308Z
+        host: ""
+    resp:
+        status_code: 200
+        header:
+            Content-Length: "168"
+            Content-Type: application/json
+            Date: Tue, 06 Feb 2024 12:01:27 GMT
+            Server: Werkzeug/3.0.1 Python/3.9.18
+        body: |
+            {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjVjMjFmOGM4MWI1NDA3M2NmOTZkZThkIiwiZXhwIjoxNzA3MjIxMTg3fQ.DAAapHbgwZneqml0slTFrChcFpJtG1AK5uX5Ylp6SF8"}
+        body_type: ""
+        status_message: ""
+        proto_major: 0
+        proto_minor: 0
+        timestamp: 2024-02-06T12:01:29.428429399Z
+    objects: []
+    assertions:
+        noise:
+            header.Date: []
+    created: 1707220889
+curl: |-
+    curl --request POST \
+      --url http://localhost:5000/login \
+      --header 'Host: localhost:5000' \
+      --header 'User-Agent: PostmanRuntime/7.32.1' \
+      --header 'Cache-Control: no-cache' \
+      --header 'Accept: */*' \
+      --header 'Content-Type: application/json' \
+      --header 'Connection: keep-alive' \
+      --header 'Accept-Encoding: gzip, deflate, br' \
+      --header 'Postman-Token: e4a125cb-0128-4cd5-9de1-687336db7245' \
+      --data '{
+        "username": "Shubham",
+        "password": "jain"
+    }'

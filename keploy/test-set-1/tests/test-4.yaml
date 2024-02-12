@@ -1,0 +1,52 @@
+version: api.keploy-enterprise.io/v1beta1
+kind: Http
+name: test-4
+spec:
+    metadata: {}
+    req:
+        method: GET
+        proto_major: 1
+        proto_minor: 1
+        url: http://localhost:5000/item/65c21fa181b54073cf96de8e
+        header:
+            Accept: '*/*'
+            Accept-Encoding: gzip, deflate, br
+            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjVjMjFmOGM4MWI1NDA3M2NmOTZkZThkIiwiZXhwIjoxNzA3MjIxMTg3fQ.DAAapHbgwZneqml0slTFrChcFpJtG1AK5uX5Ylp6SF8
+            Cache-Control: no-cache
+            Connection: keep-alive
+            Host: localhost:5000
+            Postman-Token: 5d45d41c-355b-4edc-852f-320069b0759f
+            User-Agent: PostmanRuntime/7.32.1
+        body: ""
+        body_type: ""
+        timestamp: 2024-02-06T12:02:02.521786667Z
+        host: ""
+    resp:
+        status_code: 200
+        header:
+            Content-Length: "96"
+            Content-Type: text/html; charset=utf-8
+            Date: Tue, 06 Feb 2024 12:02:02 GMT
+            Server: Werkzeug/3.0.1 Python/3.9.18
+        body: '{"_id": {"$oid": "65c21fa181b54073cf96de8e"}, "name": "Item Name", "description": "Description"}'
+        body_type: ""
+        status_message: ""
+        proto_major: 0
+        proto_minor: 0
+        timestamp: 2024-02-06T12:02:04.597231968Z
+    objects: []
+    assertions:
+        noise:
+            header.Date: []
+    created: 1707220924
+curl: |
+    curl --request GET \
+      --url http://localhost:5000/item/65c21fa181b54073cf96de8e \
+      --header 'Connection: keep-alive' \
+      --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjVjMjFmOGM4MWI1NDA3M2NmOTZkZThkIiwiZXhwIjoxNzA3MjIxMTg3fQ.DAAapHbgwZneqml0slTFrChcFpJtG1AK5uX5Ylp6SF8' \
+      --header 'User-Agent: PostmanRuntime/7.32.1' \
+      --header 'Accept: */*' \
+      --header 'Cache-Control: no-cache' \
+      --header 'Postman-Token: 5d45d41c-355b-4edc-852f-320069b0759f' \
+      --header 'Host: localhost:5000' \
+      --header 'Accept-Encoding: gzip, deflate, br' \

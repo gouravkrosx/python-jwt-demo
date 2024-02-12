@@ -1,0 +1,62 @@
+version: api.keploy-enterprise.io/v1beta1
+kind: Http
+name: test-1
+spec:
+    metadata: {}
+    req:
+        method: POST
+        proto_major: 1
+        proto_minor: 1
+        url: http://localhost:5000/register
+        header:
+            Accept: '*/*'
+            Accept-Encoding: gzip, deflate, br
+            Cache-Control: no-cache
+            Connection: keep-alive
+            Content-Length: "55"
+            Content-Type: application/json
+            Host: localhost:5000
+            Postman-Token: 1bc5664f-1b1e-4e63-bb76-2348ee854ad4
+            User-Agent: PostmanRuntime/7.32.1
+        body: |-
+            {
+                "username": "Animesh",
+                "password": "pathak"
+            }
+        body_type: ""
+        timestamp: 2024-02-06T11:25:52.89128957Z
+        host: ""
+    resp:
+        status_code: 201
+        header:
+            Content-Length: "43"
+            Content-Type: application/json
+            Date: Tue, 06 Feb 2024 11:25:53 GMT
+            Server: Werkzeug/3.0.1 Python/3.9.18
+        body: |
+            {"message":"User registered successfully"}
+        body_type: ""
+        status_message: ""
+        proto_major: 0
+        proto_minor: 0
+        timestamp: 2024-02-06T11:25:55.098232867Z
+    objects: []
+    assertions:
+        noise:
+            header.Date: []
+    created: 1707218755
+curl: |-
+    curl --request POST \
+      --url http://localhost:5000/register \
+      --header 'Cache-Control: no-cache' \
+      --header 'Host: localhost:5000' \
+      --header 'User-Agent: PostmanRuntime/7.32.1' \
+      --header 'Connection: keep-alive' \
+      --header 'Accept-Encoding: gzip, deflate, br' \
+      --header 'Postman-Token: 1bc5664f-1b1e-4e63-bb76-2348ee854ad4' \
+      --header 'Accept: */*' \
+      --header 'Content-Type: application/json' \
+      --data '{
+        "username": "Animesh",
+        "password": "pathak"
+    }'

@@ -1,0 +1,53 @@
+version: api.keploy-enterprise.io/v1beta1
+kind: Http
+name: test-5
+spec:
+    metadata: {}
+    req:
+        method: DELETE
+        proto_major: 1
+        proto_minor: 1
+        url: http://localhost:5000/item/65c21fa181b54073cf96de8e
+        header:
+            Accept: '*/*'
+            Accept-Encoding: gzip, deflate, br
+            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjVjMjFmOGM4MWI1NDA3M2NmOTZkZThkIiwiZXhwIjoxNzA3MjIxMTg3fQ.DAAapHbgwZneqml0slTFrChcFpJtG1AK5uX5Ylp6SF8
+            Cache-Control: no-cache
+            Connection: keep-alive
+            Host: localhost:5000
+            Postman-Token: e3290aef-308a-44dd-b93e-73f75114ea46
+            User-Agent: PostmanRuntime/7.32.1
+        body: ""
+        body_type: ""
+        timestamp: 2024-02-06T12:02:16.263001792Z
+        host: ""
+    resp:
+        status_code: 200
+        header:
+            Content-Length: "27"
+            Content-Type: application/json
+            Date: Tue, 06 Feb 2024 12:02:16 GMT
+            Server: Werkzeug/3.0.1 Python/3.9.18
+        body: |
+            {"message":"Item deleted"}
+        body_type: ""
+        status_message: ""
+        proto_major: 0
+        proto_minor: 0
+        timestamp: 2024-02-06T12:02:18.339481728Z
+    objects: []
+    assertions:
+        noise:
+            header.Date: []
+    created: 1707220938
+curl: |
+    curl --request DELETE \
+      --url http://localhost:5000/item/65c21fa181b54073cf96de8e \
+      --header 'Cache-Control: no-cache' \
+      --header 'Postman-Token: e3290aef-308a-44dd-b93e-73f75114ea46' \
+      --header 'Host: localhost:5000' \
+      --header 'Accept-Encoding: gzip, deflate, br' \
+      --header 'Connection: keep-alive' \
+      --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjVjMjFmOGM4MWI1NDA3M2NmOTZkZThkIiwiZXhwIjoxNzA3MjIxMTg3fQ.DAAapHbgwZneqml0slTFrChcFpJtG1AK5uX5Ylp6SF8' \
+      --header 'User-Agent: PostmanRuntime/7.32.1' \
+      --header 'Accept: */*' \
