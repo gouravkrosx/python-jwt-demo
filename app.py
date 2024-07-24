@@ -7,10 +7,10 @@ import jwt
 import os
 import datetime
 from functools import wraps
-from keploy import FlaskCoverageMiddleware
+# from keploy import FlaskCoverageMiddleware
 
 app = Flask(__name__)
-app.wsgi_app = FlaskCoverageMiddleware(app.wsgi_app)
+# app.wsgi_app = FlaskCoverageMiddleware(app.wsgi_app)
 app.config["MONGO_URI"] = "mongodb://jwtMongo:27017/myDatabase"  # Adjust as needed
 app.config["SECRET_KEY"] = "unsafe_secret"  # Change to your secret key
 app.config["TOKEN_EXPIRATION_MINUTES"] = 5  # Add this line
